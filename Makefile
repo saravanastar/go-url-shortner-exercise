@@ -6,6 +6,9 @@ build:
 dockerize:
 	docker build -t url-shortner .
 
-run-docker:
+run-docker: dockerize
 	docker run -p 8080:8080 url-shortner
+
+run:
+	go run -C ./src ./cmd/main.go
 	
